@@ -122,7 +122,7 @@ rho=1.225;
 mu=1.81*10^(-5);
 c0=343;
 len=0.075; %plate semichord
-Cf= beta; %intertial resistance, also called beta in various places
+Cf= beta; %inertial resistance, also called beta in various places
 
 Grf=rho*Cf*c0*sqrt(K)/mu;
 Grn=rho*K*c0/(mu*len);
