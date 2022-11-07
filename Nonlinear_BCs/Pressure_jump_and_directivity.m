@@ -7,6 +7,7 @@ h=@(x) 0.6*(0.2969*sqrt((x+1)/2)-0.126*((x+1)/2)-0.3516*((x+1)/2).^2+0.2843*((x+
 % case 3
 K=5.72*10^(-11); beta=0.5;
 
+% For plate of 12% thickness
 [d_s,PHI_jump]=PW_comp(0.1,@(x) 0*x+0.012,K,beta,0);
 D_nonlin_h1_1=d_s; p_nonlin_h1_1=PHI_jump{1};
 [d_s,PHI_jump]=PW_comp(0.1,@(x) 0*x+0.012,K,0,0);
@@ -23,7 +24,7 @@ D_nonlin_h1_3=d_s; p_nonlin_h1_3=PHI_jump{1};
 D_lin_h1_3=d_s; p_lin_h1_3=PHI_jump{1};
 
 
-
+% For NACA 0012
 [d_s,PHI_jump]=PW_comp(0.1,h,K,beta,0);
 D_nonlin_h2_1=d_s; p_nonlin_h2_1=PHI_jump{1};
 [d_s,PHI_jump]=PW_comp(0.1,h,K,0,0);
@@ -39,8 +40,9 @@ D_nonlin_h2_3=d_s; p_nonlin_h2_3=PHI_jump{1};
 [d_s,PHI_jump]=PW_comp(10,h,K,0,0);
 D_lin_h2_3=d_s; p_lin_h2_3=PHI_jump{1};
 
-%%
-figure
+%% Plot real and imaginary parts of the pressure discontinuity
+% at different wavenumbers for flat plate
+figure("Name", "Flat plate pressure discontinuity")
 subplot(2,3,1)
 plot(-1:0.01:1,real(p_nonlin_h1_1),'linewidth',2)
 hold on
@@ -78,8 +80,9 @@ plot(-1:0.01:1,imag(p_lin_h1_3),'linewidth',2,'linestyle','--')
 title('Linear, $k_0=10$','interpreter','latex','fontsize',10)
 
 
-%%
-figure
+%% Plot real and imaginary parts of the pressure discontinuity
+% at different wavenumbers for NACA 0012
+figure("Name", "NACA 0012 pressure discontinuity")
 subplot(2,3,1)
 plot(-1:0.01:1,real(p_nonlin_h2_1),'linewidth',2)
 hold on
@@ -117,9 +120,8 @@ plot(-1:0.01:1,imag(p_lin_h2_3),'linewidth',2,'linestyle','--')
 title('Linear, $k_0=10$','interpreter','latex','fontsize',10)
 
 
-%%
-
-figure
+%% Plot directionality for flat plate at different wavenumbers
+figure("Name", "Flat plate directionality")
 
 subplot(2,1,1)
 plot((0:0.001:2*pi)/(2*pi),log10(abs(D_nonlin_h1_1))*10,':k','linewidth',2);
@@ -140,9 +142,9 @@ xlabel('$\theta/(2\pi)$','interpreter','latex','fontsize',14)
 legend({'$k_0=0.1$','$k_0=1$','$k_0=10$'},'interpreter','latex','fontsize',10,'location','best');
 
 
-%%
+%% Plot directionality for NACA 0012 at different wavenumbers
 
-figure
+figure("Name", "NACA 0012 directionality")
 
 subplot(2,1,1)
 plot((0:0.001:2*pi)/(2*pi),log10(abs(D_nonlin_h2_1))*10,':k','linewidth',2);
@@ -171,7 +173,7 @@ rho=1.225;
 mu=1.81*10^(-5);
 c0=343;
 len=0.075; %plate semichord
-Cf= beta; %intertial resistance, also called beta in various places
+Cf= beta; %inertial resistance, also called beta in various places
 
 Grf=rho*Cf*c0*sqrt(K)/mu;
 Grn=rho*K*c0/(mu*len);
