@@ -80,45 +80,45 @@ plot(-1:0.01:1,imag(p_lin_h1_3),'linewidth',2,'linestyle','--')
 title('Linear, $k_0=10$','interpreter','latex','fontsize',10)
 
 
-%% Plot real and imaginary parts of the pressure discontinuity
-% at different wavenumbers for NACA 0012
-figure("Name", "NACA 0012 pressure discontinuity")
-subplot(2,3,1)
-plot(-1:0.01:1,real(p_nonlin_h2_1),'linewidth',2)
-hold on
-plot(-1:0.01:1,imag(p_nonlin_h2_1),'linewidth',2,'linestyle','--')
-title('Non-linear, $k_0=0.1$','interpreter','latex','fontsize',10)
-
-subplot(2,3,2)
-plot(-1:0.01:1,real(p_nonlin_h2_2),'linewidth',2)
-hold on
-plot(-1:0.01:1,imag(p_nonlin_h2_2),'linewidth',2,'linestyle','--')
-title('Non-linear, $k_0=1$','interpreter','latex','fontsize',10)
-
-subplot(2,3,3)
-plot(-1:0.01:1,real(p_nonlin_h2_3),'linewidth',2)
-hold on
-plot(-1:0.01:1,imag(p_nonlin_h2_3),'linewidth',2,'linestyle','--')
-title('Non-linear, $k_0=10$','interpreter','latex','fontsize',10)
-
-subplot(2,3,4)
-plot(-1:0.01:1,real(p_lin_h2_1),'linewidth',2)
-hold on
-plot(-1:0.01:1,imag(p_lin_h2_1),'linewidth',2,'linestyle','--')
-title('Linear, $k_0=0.1$','interpreter','latex','fontsize',10)
-
-subplot(2,3,5)
-plot(-1:0.01:1,real(p_lin_h2_2),'linewidth',2)
-hold on
-plot(-1:0.01:1,imag(p_lin_h2_2),'linewidth',2,'linestyle','--')
-title('Linear, $k_0=1$','interpreter','latex','fontsize',10)
-
-subplot(2,3,6)
-plot(-1:0.01:1,real(p_lin_h2_3),'linewidth',2)
-hold on
-plot(-1:0.01:1,imag(p_lin_h2_3),'linewidth',2,'linestyle','--')
-title('Linear, $k_0=10$','interpreter','latex','fontsize',10)
-
+% %% Plot real and imaginary parts of the pressure discontinuity
+% % at different wavenumbers for NACA 0012
+% figure("Name", "NACA 0012 pressure discontinuity")
+% subplot(2,3,1)
+% plot(-1:0.01:1,real(p_nonlin_h2_1),'linewidth',2)
+% hold on
+% plot(-1:0.01:1,imag(p_nonlin_h2_1),'linewidth',2,'linestyle','--')
+% title('Non-linear, $k_0=0.1$','interpreter','latex','fontsize',10)
+% 
+% subplot(2,3,2)
+% plot(-1:0.01:1,real(p_nonlin_h2_2),'linewidth',2)
+% hold on
+% plot(-1:0.01:1,imag(p_nonlin_h2_2),'linewidth',2,'linestyle','--')
+% title('Non-linear, $k_0=1$','interpreter','latex','fontsize',10)
+% 
+% subplot(2,3,3)
+% plot(-1:0.01:1,real(p_nonlin_h2_3),'linewidth',2)
+% hold on
+% plot(-1:0.01:1,imag(p_nonlin_h2_3),'linewidth',2,'linestyle','--')
+% title('Non-linear, $k_0=10$','interpreter','latex','fontsize',10)
+% 
+% subplot(2,3,4)
+% plot(-1:0.01:1,real(p_lin_h2_1),'linewidth',2)
+% hold on
+% plot(-1:0.01:1,imag(p_lin_h2_1),'linewidth',2,'linestyle','--')
+% title('Linear, $k_0=0.1$','interpreter','latex','fontsize',10)
+% 
+% subplot(2,3,5)
+% plot(-1:0.01:1,real(p_lin_h2_2),'linewidth',2)
+% hold on
+% plot(-1:0.01:1,imag(p_lin_h2_2),'linewidth',2,'linestyle','--')
+% title('Linear, $k_0=1$','interpreter','latex','fontsize',10)
+% 
+% subplot(2,3,6)
+% plot(-1:0.01:1,real(p_lin_h2_3),'linewidth',2)
+% hold on
+% plot(-1:0.01:1,imag(p_lin_h2_3),'linewidth',2,'linestyle','--')
+% title('Linear, $k_0=10$','interpreter','latex','fontsize',10)
+% 
 
 %% Plot directionality for flat plate at different wavenumbers
 figure("Name", "Flat plate directionality")
@@ -142,29 +142,29 @@ xlabel('$\theta/(2\pi)$','interpreter','latex','fontsize',14)
 legend({'$k_0=0.1$','$k_0=1$','$k_0=10$'},'interpreter','latex','fontsize',10,'location','best');
 
 
-%% Plot directionality for NACA 0012 at different wavenumbers
-
-figure("Name", "NACA 0012 directionality")
-
-subplot(2,1,1)
-plot((0:0.001:2*pi)/(2*pi),log10(abs(D_nonlin_h2_1))*10,':k','linewidth',2);
-hold on
-plot((0:0.001:2*pi)/(2*pi),log10(abs(D_nonlin_h2_2))*10,'--k','linewidth',1);
-plot((0:0.001:2*pi)/(2*pi),log10(abs(D_nonlin_h2_3))*10,'k','linewidth',2);
-axis([0,1,-40,-10])
-xlabel('$\theta/(2\pi)$','interpreter','latex','fontsize',14)
-legend({'$k_0=0.1$','$k_0=1$','$k_0=10$'},'interpreter','latex','fontsize',10,'location','best')
-subplot(2,1,2)
-plot((0:0.001:2*pi)/(2*pi),log10(abs(D_lin_h2_1))*10,':k','linewidth',2);
-hold on
-plot((0:0.001:2*pi)/(2*pi),log10(abs(D_lin_h2_2))*10,'--k','linewidth',1);
-plot((0:0.001:2*pi)/(2*pi),log10(abs(D_lin_h2_3))*10,'k','linewidth',2);
-axis([0,1,-40,-10])
-xlabel('$\theta/(2\pi)$','interpreter','latex','fontsize',14)
-legend({'$k_0=0.1$','$k_0=1$','$k_0=10$'},'interpreter','latex','fontsize',10,'location','best')
-
-
-
+% %% Plot directionality for NACA 0012 at different wavenumbers
+% 
+% figure("Name", "NACA 0012 directionality")
+% 
+% subplot(2,1,1)
+% plot((0:0.001:2*pi)/(2*pi),log10(abs(D_nonlin_h2_1))*10,':k','linewidth',2);
+% hold on
+% plot((0:0.001:2*pi)/(2*pi),log10(abs(D_nonlin_h2_2))*10,'--k','linewidth',1);
+% plot((0:0.001:2*pi)/(2*pi),log10(abs(D_nonlin_h2_3))*10,'k','linewidth',2);
+% axis([0,1,-40,-10])
+% xlabel('$\theta/(2\pi)$','interpreter','latex','fontsize',14)
+% legend({'$k_0=0.1$','$k_0=1$','$k_0=10$'},'interpreter','latex','fontsize',10,'location','best')
+% subplot(2,1,2)
+% plot((0:0.001:2*pi)/(2*pi),log10(abs(D_lin_h2_1))*10,':k','linewidth',2);
+% hold on
+% plot((0:0.001:2*pi)/(2*pi),log10(abs(D_lin_h2_2))*10,'--k','linewidth',1);
+% plot((0:0.001:2*pi)/(2*pi),log10(abs(D_lin_h2_3))*10,'k','linewidth',2);
+% axis([0,1,-40,-10])
+% xlabel('$\theta/(2\pi)$','interpreter','latex','fontsize',14)
+% legend({'$k_0=0.1$','$k_0=1$','$k_0=10$'},'interpreter','latex','fontsize',10,'location','best')
+% 
+% 
+% 
 
 
 %%
